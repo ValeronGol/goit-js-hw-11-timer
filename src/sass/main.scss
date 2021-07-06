@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  background: #cacac7;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.title {
+  color: #000e5f;
+  font-size: 40px;
+}
+
+.field {
+  padding: 10px;
+  border-radius: 3px;
+  background: #286139;
+  display: inline-block;
+}
+
+.value {
+  padding: 15px;
+  border-radius: 3px;
+  background: #e2e2e2;
+  display: inline-block;
+  font-size: 56px;
+}
+
+.label {
+  display: block;
+  padding-top: 5px;
+  font-size: 56px;
+}
