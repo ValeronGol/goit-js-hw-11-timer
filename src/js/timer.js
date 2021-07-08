@@ -5,12 +5,12 @@ class CountdownTimer {
     this.selector = selector;
     this.targetDate = targetDate;
     this.timerName = timerName;
-    this.mekeMarkup();
+    this.makeTimer();
     this.makeTitle();
     this.start();
   }
 
-  mekeMarkup() {
+  makeTimer() {
     document.body.insertAdjacentHTML('afterbegin', timerHTML());
     document.querySelector('.timer').id = this.selector;
   }
