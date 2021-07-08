@@ -1,16 +1,24 @@
 import timerHTML from '../templates/timer.hbs';
 
 class CountdownTimer {
-  constructor({ selector, targetDate }) {
+  constructor({ selector, targetDate, timerName }) {
     this.selector = selector;
     this.targetDate = targetDate;
+    this.timerName = timerName;
     this.mekeMarkup();
+    this.makeTitle();
     this.start();
   }
 
   mekeMarkup() {
     document.body.insertAdjacentHTML('afterbegin', timerHTML());
     document.querySelector('.timer').id = this.selector;
+  }
+  makeTitle() {
+    const timer = document.getElementById(this.selector);
+    const title = document.createElement('h1');
+    title.textContent = this.timerName;
+    timer.before(title);
   }
 
   start() {
@@ -44,8 +52,18 @@ class CountdownTimer {
     return String(value).padStart(2, '0');
   }
 }
-
-const timer = new CountdownTimer({
+const timer1 = new CountdownTimer({
   selector: '#timer-1',
+  targetDate: new Date('Jul 13, 2021'),
+  timerName: 'До начала отпуска осталось',
+});
+const timer2 = new CountdownTimer({
+  selector: '#timer-2',
   targetDate: new Date('Jul 27, 2021'),
+  timerName: 'До дня рождения моей бабушки осталось',
+});
+const timer3 = new CountdownTimer({
+  selector: '#timer-3',
+  targetDate: new Date('Aug 31, 2021'),
+  timerName: 'До окончания лета осталось',
 });
